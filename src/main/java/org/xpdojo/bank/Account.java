@@ -12,4 +12,9 @@ public class Account {
         balance -= debit;
     }
 
+    public void transfer(int amount, Account destination) {
+        this.withdraw(amount);
+        destination.deposit(amount);
+    }
+
 }

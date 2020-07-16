@@ -28,4 +28,14 @@ public class AccountTest {
         assertThat(testAcc.balance).isEqualTo(5);
     }
 
+    @Test
+    public void transferAnAmountToDecreaseTheOriginBalanceAndIncreaseTheDestinationBalance() {
+        Account testAccOrigin = new Account();
+        Account testAccDestination = new Account();
+        testAccOrigin.deposit(10);
+        testAccOrigin.transfer(4, testAccDestination);
+        assertThat(testAccOrigin.balance).isEqualTo(6);
+        assertThat(testAccDestination.balance).isEqualTo(4);
+    }
+
 }
